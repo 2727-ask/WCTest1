@@ -8,8 +8,6 @@ class PersonalInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
-    var textColor = Colors.grey;
     var textColor2 = Colors.blueGrey;
     var textColor3 = Colors.black87;
     return Container(
@@ -17,7 +15,7 @@ class PersonalInfo extends StatelessWidget {
       width: width * 0.9,
       child: Column(
         children: [
-          Container(
+          SizedBox(
             width: width * 0.9,
             child: Text(
               title!,

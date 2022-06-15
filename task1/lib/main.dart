@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:task1/screens/ProfilePage.dart';
+import 'package:task1/screens/profile_page.dart';
+
+import 'common_widgets/labeled_checkbox.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,6 +59,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  Object _groupValue = -1;
+  bool _isSelected = false;
+  bool _isSelected2 = false;
 
   void _incrementCounter() {
     setState(() {
@@ -120,10 +125,51 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
               },
               child: const Text("Profile Page"),
+            ),
+            RadioListTile(
+              title: const Text('Lafayette'),
+              value: 1,
+              groupValue: _groupValue,
+              onChanged: (value) {
+                setState(() {
+                  _groupValue = value!;
+                });
+              },
+            ),
+            RadioListTile(
+              title: const Text('Thomas Jefferson'),
+              value: 2,
+              groupValue: _groupValue,
+              onChanged: (value) {
+                setState(() {
+                  _groupValue = value!;
+                });
+              },
+            ),
+            LabeledCheckbox(
+              label: 'This is the label text 1',
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              value: _isSelected,
+              onChanged: (bool newValue) {
+                setState(() {
+                  _isSelected = newValue;
+                });
+              },
+            ),
+            LabeledCheckbox(
+              label: 'This is the label text 2',
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              value: _isSelected2,
+              onChanged: (bool newValue) {
+                setState(() {
+                  _isSelected2 = newValue;
+                });
+              },
             )
           ],
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',

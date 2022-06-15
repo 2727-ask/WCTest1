@@ -8,7 +8,7 @@ class SkillBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.only(left:width * 0.02),
+      margin: EdgeInsets.all(width * 0.01),
       child: Chip(
         label: Text(
           title!,

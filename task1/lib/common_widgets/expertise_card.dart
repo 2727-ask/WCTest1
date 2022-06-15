@@ -2,26 +2,29 @@
 
 import 'package:flutter/material.dart';
 
-class LanguageCont extends StatelessWidget {
-  const LanguageCont({Key? key}) : super(key: key);
+class ExpertiseCard extends StatelessWidget {
+  final String? title;
+  final String? status;
+  const ExpertiseCard({Key? key, this.title, this.status})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.only(top:width * 0.025),
+      margin: EdgeInsets.only(top: width * 0.025),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            "English",
+            title!,
             style: TextStyle(
               fontSize: width * 0.045,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
-            "Expert",
+            status!,
             style: TextStyle(
                 fontSize: width * 0.035,
                 fontWeight: FontWeight.bold,

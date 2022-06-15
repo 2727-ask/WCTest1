@@ -12,7 +12,7 @@ class HeroSection extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       children: [
         ClipPath(
-          clipper: curveClipper(),
+          clipper: CurveClipper(),
           child: Container(
             color: Colors.orange[100],
             height: width * 0.20,
@@ -49,7 +49,7 @@ class HeroSection extends StatelessWidget {
   }
 }
 
-class curveClipper extends CustomClipper<Path> {
+class CurveClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     int curveHeight = 60;
