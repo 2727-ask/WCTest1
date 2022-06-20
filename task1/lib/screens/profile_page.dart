@@ -1,7 +1,8 @@
 // ignore_for_file: unnecessary_const
 
 import 'package:flutter/material.dart';
-
+import 'package:task1/constants.dart';
+import 'package:task1/screens/edit_profile.dart';
 import '../common_widgets/action_button.dart';
 import '../common_widgets/card_with_icon.dart';
 import '../common_widgets/expertise_card.dart';
@@ -13,6 +14,7 @@ import '../common_widgets/personal_info.dart';
 import '../common_widgets/info_header.dart';
 import '../common_widgets/skill_badge.dart';
 
+import '../common_widgets/user_information.dart';
 import '../models/experience.dart';
 import '../models/education.dart';
 import '../models/expertise.dart';
@@ -23,7 +25,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    var textColor = Colors.grey;
+    var textColor = Constants.secondaryColour;
 
     List<Experience> experiences = Experiences().expsList;
     List<Education> educationList = Educations().eduList;
@@ -32,20 +34,20 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(
-          color: Colors.black, //change your color here
+          color: Constants.darkColour, //change your color here
         ),
         elevation: 0,
-        backgroundColor: Colors.orange[100],
+        backgroundColor: Constants.primaryColour,
         centerTitle: true,
         title: const Text(
           'Profile',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Constants.darkColour, fontWeight: FontWeight.bold),
         ),
         actions: [
           IconButton(
             onPressed: () => {},
             icon: const Icon(Icons.settings),
-            color: Colors.black,
+            color:Constants.darkColour,
           ),
         ],
       ),
@@ -54,39 +56,24 @@ class ProfilePage extends StatelessWidget {
         child: ListView(
           children: [
             const HeroSection(),
+            const UserInfo(
+                userName: "Rohan Chopra", designation: "Full Stack Developer"),
             Container(
-              margin: EdgeInsets.only(top: width * 0.1),
-              child: Column(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(top: width * 0.03),
-                    child: Text(
-                      "Rohan Chopra",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: width * 0.05,
-                      ),
+              margin: EdgeInsets.all(width * Constants.standardMarginPercent7),
+              child: ActionButton(
+                label: "Edit Profile",
+                avatar: const Icon(Icons.edit_note_sharp),
+                onPressed: () => {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: ((context) => const EditProfile()),
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: width * 0.02),
-                    child: Text(
-                      "Sr. UI/UX designer",
-                      style: TextStyle(
-                        fontSize: width * 0.03,
-                      ),
-                    ),
-                  ),
-                ],
+                  )
+                },
               ),
             ),
             Container(
-              margin: EdgeInsets.all(width * 0.07),
-              child: const ActionButton(
-                  label: "Edit Profile", avatar: Icon(Icons.edit_note_sharp)),
-            ),
-            Container(
-              margin: EdgeInsets.all(width * 0.07),
+              margin: EdgeInsets.all(width * Constants.standardMarginPercent7),
               child: Column(
                 children: [
                   InfoHeader(
@@ -97,7 +84,7 @@ class ProfilePage extends StatelessWidget {
                     margin: EdgeInsets.only(top: width * 0.05),
                     padding: EdgeInsets.all(width * 0.02),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFEEEEEE),
+                      color: Constants.secondaryColourLight,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Column(
@@ -179,7 +166,9 @@ class ProfilePage extends StatelessWidget {
             Container(
               width: width * 0.8,
               margin: EdgeInsets.only(
-                  left: width * 0.07, right: width * 0.07, top: width * 0.05),
+                  left: width * Constants.standardMarginPercent7,
+                  right: width * Constants.standardMarginPercent7,
+                  top: width * 0.05),
               child: Column(
                 children: [
                   InfoHeader(
@@ -191,7 +180,7 @@ class ProfilePage extends StatelessWidget {
                       top: width * 0.05,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFEEEEEE),
+                      color: Constants.secondaryColourLight,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     padding: EdgeInsets.all(width * 0.005),
@@ -214,7 +203,9 @@ class ProfilePage extends StatelessWidget {
             Container(
               width: width * 0.8,
               margin: EdgeInsets.only(
-                  left: width * 0.07, right: width * 0.07, top: width * 0.05),
+                  left: width * Constants.standardMarginPercent7,
+                  right: width * Constants.standardMarginPercent7,
+                  top: width * 0.05),
               child: Column(
                 children: [
                   InfoHeader(
@@ -229,7 +220,7 @@ class ProfilePage extends StatelessWidget {
                       top: width * 0.05,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFEEEEEE),
+                      color: Constants.secondaryColourLight,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     padding: EdgeInsets.all(width * 0.005),

@@ -3,19 +3,24 @@ import 'package:flutter/material.dart';
 class ActionButton extends StatelessWidget {
   final String? label;
   final Widget? avatar;
-  const ActionButton({Key? key, this.label, this.avatar})
+  final void Function() onPressed;
+  const ActionButton(
+      {Key? key, this.label, this.avatar, required this.onPressed})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return ActionChip(
       label: Container(
-          padding: const EdgeInsets.all(10),
-          child: Text(
-            label!,
-          )),
+        padding: EdgeInsets.all(width * 0.02),
+        child: Text(
+          label!,
+          style: TextStyle(fontSize: width*0.03),
+        ),
+      ),
       avatar: avatar,
-      onPressed: () => {},
+      onPressed: onPressed,
     );
   }
 }

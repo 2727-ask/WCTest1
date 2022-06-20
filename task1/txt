@@ -1,0 +1,28 @@
+keytool -keystore path-to-debug-or-production-keystore -list -v
+
+FFButtonWidget(
+  onPressed: () {
+    print('Button pressed ...');
+  },
+  text: 'Sign in with Apple',
+  icon: FaIcon(
+    FontAwesomeIcons.apple,
+    size: 20,
+  ),
+  options: FFButtonOptions(
+    width: double.infinity,
+    height: 44,
+    color: Colors.white,
+    textStyle: GoogleFonts.getFont(
+      'Roboto',
+      color: Colors.black,
+      fontSize: 17,
+    ),
+    elevation: 4,
+    borderSide: BorderSide(
+      color: Colors.transparent,
+      width: 0,
+    ),
+    borderRadius: 12,
+  ),
+)

@@ -1,6 +1,7 @@
 import 'dart:core';
 
 import 'package:flutter/material.dart';
+import '../constants.dart';
 
 class InformationCard extends StatelessWidget {
   final String? title;
@@ -21,9 +22,9 @@ class InformationCard extends StatelessWidget {
     this.description,
     this.width = 200,
     this.height = 100,
-    this.titleColor = Colors.black,
-    this.descriptionColor = Colors.blueGrey,
-    this.backgroundColor = const Color(0xFFEEEEEE),
+    this.titleColor = Constants.darkColour,
+    this.descriptionColor = Constants.secondaryColour,
+    this.backgroundColor = Constants.secondaryColourLight,
     this.elevation = 0,
     this.padding = const EdgeInsets.all(10),
     this.showDivider = false,

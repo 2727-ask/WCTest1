@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task1/constants.dart';
 
 class HeroSection extends StatelessWidget {
   const HeroSection({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class HeroSection extends StatelessWidget {
         ClipPath(
           clipper: CurveClipper(),
           child: Container(
-            color: Colors.orange[100],
+            color: Constants.primaryColour,
             height: width * 0.20,
           ),
         ),

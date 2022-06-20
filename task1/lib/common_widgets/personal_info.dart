@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task1/constants.dart';
 
 class PersonalInfo extends StatelessWidget {
   final String? title;
@@ -8,8 +9,8 @@ class PersonalInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    var textColor2 = Colors.blueGrey;
-    var textColor3 = Colors.black87;
+    var textColor2 = Constants.secondaryColour;
+    var textColor3 = Constants.darkColour;
     return Container(
       margin: EdgeInsets.all(width * 0.03),
       width: width * 0.9,

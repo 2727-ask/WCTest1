@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:task1/constants.dart';
 
 class ExpertiseCard extends StatelessWidget {
   final String? title;
@@ -28,7 +29,7 @@ class ExpertiseCard extends StatelessWidget {
             style: TextStyle(
                 fontSize: width * 0.035,
                 fontWeight: FontWeight.bold,
-                color: Colors.blueGrey),
+                color: Constants.secondaryColour),
           ),
         ],
       ),

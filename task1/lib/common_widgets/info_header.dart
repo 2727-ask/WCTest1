@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants.dart';
+
 class InfoHeader extends StatelessWidget {
   final String? title;
   final Icon? icon;
@@ -9,7 +11,7 @@ class InfoHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    var textColor = Colors.grey;
+    var textColor =  Constants.greyColor;
     return Container(
         margin: EdgeInsets.only(left: width * 0.03),
         child: Row(

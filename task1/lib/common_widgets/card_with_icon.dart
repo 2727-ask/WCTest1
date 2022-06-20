@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task1/constants.dart';
 
 class CardWithIcon extends StatelessWidget {
   final String? title;
@@ -25,12 +26,12 @@ class CardWithIcon extends StatelessWidget {
               width: width * 0.2,
               padding: const EdgeInsets.all(8),
               child: CircleAvatar(
-                backgroundColor: Colors.orange[200],
+                backgroundColor: Constants.primaryColour,
                 radius: 15,
                 child: Icon(
                   icon!,
                   size: 13,
-                  color: Colors.black38,
+                  color: Constants.darkColour,
                 ),
               ),
             ),
@@ -43,7 +44,7 @@ class CardWithIcon extends StatelessWidget {
                   Text(
                     title!,
                     style: TextStyle(
-                      color: Colors.black,
+                      color:  Constants.darkColour,
                       fontSize: width * 0.035,
                       fontWeight: FontWeight.bold,
                       fontFamily: "Poppins",
@@ -58,7 +59,7 @@ class CardWithIcon extends StatelessWidget {
                           location!,
                           textAlign: TextAlign.start,
                           style: TextStyle(
-                            color: Colors.grey,
+                            color: Constants.greyColor,
                             fontSize: width * 0.023,
                             fontWeight: FontWeight.normal,
                             fontFamily: "Poppins",
@@ -71,7 +72,7 @@ class CardWithIcon extends StatelessWidget {
                           year!,
                           textAlign: TextAlign.end,
                           style: TextStyle(
-                            color: Colors.grey,
+                            color:  Constants.greyColor,
                             fontSize: width * 0.022,
                             fontWeight: FontWeight.bold,
                             fontFamily: "Poppins",

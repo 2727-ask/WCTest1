@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants.dart';
+
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({Key? key}) : super(key: key);
 
@@ -39,9 +41,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
         )
       ],
       currentIndex: _selectedIndex,
-      unselectedItemColor: Colors.black,
-      selectedItemColor: Colors.amber[800],
-      unselectedLabelStyle:const TextStyle(color: Colors.black),
+      unselectedItemColor: Constants.darkColour,
+      selectedItemColor: Constants.primaryColour,
+      unselectedLabelStyle:const TextStyle(color: Constants.darkColour),
       onTap: _onItemTapped,
       showUnselectedLabels: true,
     );

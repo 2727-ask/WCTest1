@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../constants.dart';
 import 'info_header.dart';
 
 class RootDivision extends StatelessWidget {
@@ -25,7 +26,7 @@ class RootDivision extends StatelessWidget {
             margin: EdgeInsets.only(top: width * 0.05),
             padding: EdgeInsets.all(width * childMargin!),
             decoration: BoxDecoration(
-              color: const Color(0xFFEEEEEE),
+              color: Constants.secondaryColourLight,
               borderRadius: BorderRadius.circular(12),
             ),
             child: child,
