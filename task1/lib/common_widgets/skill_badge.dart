@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class SkillBadge extends StatelessWidget {
   final String? title;
-  const SkillBadge({Key? key, this.title}) : super(key: key);
+  final Color backgroundColor;
+  final Color titleColor;
+  const SkillBadge({Key? key, this.title, this.backgroundColor=const Color.fromARGB(255, 247, 207, 78), this.titleColor=Colors.white}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +14,9 @@ class SkillBadge extends StatelessWidget {
       child: Chip(
         label: Text(
           title!,
-          style: const TextStyle(color: Colors.white),
+          style:TextStyle(color:titleColor),
         ),
-        backgroundColor: const Color.fromARGB(255, 247, 207, 78),
+        backgroundColor: backgroundColor,
       ),
     );
   }

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:task1/screens/profile_page.dart';
-
-import 'common_widgets/login_with_google.dart';
-
+import 'package:task1/common_widgets/wiscircle_appbar.dart';
+import 'screens/tell_us_more_about_you.dart';
+import 'screens/wiscircle_opportunity_page.dart';
 
 void main() => runApp(const MyApp());
 
@@ -12,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Material App',
       home: HomePage(),
     );
@@ -25,29 +25,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Material App Bar'),
-      ),
-      body: Container(
-        margin: const EdgeInsets.only(top: 30),
-        child: Column(
-          children: [
-            Center(
-              child: LoginWithGoogle(),
-            ),
-            ElevatedButton(
-                onPressed: () => {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: ((context) => const ProfilePage()),
-                        ),
-                      ),
-                    },
-                child: const Text("Profile Page"))
-          ],
-        ),
-      ),
+    double height = MediaQuery.of(context).size.height;
+    return  Scaffold(
+      body: Container(margin:EdgeInsets.only(top: height*0.05), child:const TellUsMoreAboutYou()),
     );
   }
 }

@@ -53,14 +53,6 @@ android {
         versionName flutterVersionName
     }
 
-    
-    buildTypes {
-        debug {
-            signingConfig signingConfigs.debug
-        }
-    }
-
-
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
