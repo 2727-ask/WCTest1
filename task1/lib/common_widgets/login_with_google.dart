@@ -6,6 +6,7 @@ import 'package:task1/constants.dart';
 
 class LoginWithGoogle extends StatefulWidget {
   String? googleSignInidToken = "";
+  String? accessToken = "";
   bool? isLoggedIn;
   LoginWithGoogle({Key? key}) : super(key: key);
   @override
@@ -14,7 +15,11 @@ class LoginWithGoogle extends StatefulWidget {
 
 class _LoginWithGoogleState extends State<LoginWithGoogle> {
   final GoogleSignIn _googleSignIn = GoogleSignIn(
-    scopes: ['profile', 'email'],
+    scopes: [
+      'email',
+      'https://www.googleapis.com/auth/contacts.readonly',
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ],
   );
 
   @override
@@ -27,8 +32,14 @@ class _LoginWithGoogleState extends State<LoginWithGoogle> {
   Future<void> _handleSignIn() async {
     try {
       GoogleSignInAccount? account = await _googleSignIn.signIn();
+      
+
       GoogleSignInAuthentication? googleKey = await account?.authentication;
-      widget.googleSignInidToken = googleKey!.accessToken;
+      widget.googleSignInidToken = googleKey!.idToken;
+      widget.accessToken = googleKey.accessToken;
+      // print(googleKey.accessToken);
+      print(googleKey.idToken);
+
       checkLoginStatus();
     } catch (error) {
       print("Error Occured");
@@ -70,10 +81,13 @@ class _LoginWithGoogleState extends State<LoginWithGoogle> {
         width: width * 0.8,
         color: Constants.blueColor,
         child: ListTile(
-          leading: const Icon(Icons.android, color: Colors.white,),
+          leading: const Icon(
+            Icons.android,
+            color: Colors.white,
+          ),
           title: Text(
             "Signin With Google",
-            style: TextStyle(fontSize: width * 0.040,color: Colors.white),
+            style: TextStyle(fontSize: width * 0.040, color: Colors.white),
           ),
         ),
       ),
